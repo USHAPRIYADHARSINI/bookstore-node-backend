@@ -6,6 +6,7 @@ import cors from "cors";
 import userRouter from "./routes/user.routes.js";
 import booksRouter from './routes/books.routes.js';
 import addtocartRouter from './routes/addtocart.routes.js';
+import paymentRouter from './routes/payment.routes.js';
 
 const app = express();
 app.use(express.json());
@@ -27,6 +28,7 @@ app.get("/", function (request, response) {
 app.use("/users", userRouter);
 app.use("/books", booksRouter);
 app.use("/users/cart", addtocartRouter);
+app.use("/payment", paymentRouter);
 
 app.listen(PORT, () => console.log("server started on port : ", PORT));
 
